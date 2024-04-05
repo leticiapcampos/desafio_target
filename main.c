@@ -1,15 +1,31 @@
 #include <stdio.h>
-int main(void){
+#include <stdlib.h>
+#include <string.h>
 
-  int n1, n2, mult;
+char* inverter(char vet[]){
+  int i, aux, fim, tam = strlen(vet);
+  char *novo = malloc((tam + 1) * sizeof(char));
 
-  printf("digite o primeiro numero: ");
-  scanf("%d",&n1);
-  printf("digite o segundo numero: ");
-  scanf("%d",&n2);
-  mult = n1 * n2;
-  printf("a multiplicação entre os dois numero inseridos e: %d",  mult);
-
-  return 0;
-  
+  fim = tam - 1;
+  for(i = 0; i < tam; i++){
+      novo[fim] = vet[i];
+      fim--;
+  }
+    novo[i] = '\0';
+    return novo;
 }
+
+ int main() {
+
+    char palavra [25] = ("programacao!");
+    char *p;
+
+    printf("%s\n", palavra);
+    inverter(palavra);
+    printf("%s\n", palavra);
+
+    p= inverter(palavra);
+    printf("%s\n", p);
+
+    return 0;
+ }
